@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Factory Zoo"
+run/main_scene="uid://p2b06bnmv0tg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
