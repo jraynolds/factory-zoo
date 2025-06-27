@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7xcalm03kg7h"]
+
+[ext_resource type="Script" uid="uid://bt6hvbejsvvrd" path="res://animals/spawning.gd" id="1_ex4h6"]
+
+[node name="Spawning" type="Node2D"]
+script = ExtResource("1_ex4h6")
