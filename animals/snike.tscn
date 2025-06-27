@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1wun5267070f"]
+
+[ext_resource type="PackedScene" uid="uid://dx1kv0yolv62f" path="res://animals/animal.tscn" id="1_bhuax"]
+
+[node name="Snike" instance=ExtResource("1_bhuax")]

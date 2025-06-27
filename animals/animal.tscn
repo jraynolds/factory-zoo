@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx1kv0yolv62f"]
+
+[ext_resource type="Texture2D" uid="uid://dhtaae48clwy2" path="res://icon.svg" id="1_wbqs1"]
+
+[node name="Animal" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wbqs1")
+
+[node name="Movement" type="Node2D" parent="."]
+
+[node name="Logic" type="Node2D" parent="."]
+
+[node name="Spawning" type="Node2D" parent="."]
+
+[node name="Interaction" type="Node2D" parent="."]
