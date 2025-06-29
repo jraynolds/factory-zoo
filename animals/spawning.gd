@@ -36,3 +36,8 @@ func spawn():
 		Movement.Cardinal.Left, 
 		Movement.Cardinal.Right
 	].pick_random())
+
+## Spawns a given entity at a given location
+func targetSpawn(loc : Vector2, obj):
+	Map.animalContainer.add_child(obj)
+	obj.position = loc

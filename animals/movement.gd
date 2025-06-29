@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 
 ## Moves the parent in a given direction.
 func move(direction: Cardinal):
+	var loc: Vector2 = get_parent().position.y - grid_size.y
 	assert(direction != null, "No given direction!")
 	match direction:
 		Cardinal.Up:
