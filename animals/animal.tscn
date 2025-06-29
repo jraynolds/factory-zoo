@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx1kv0yolv62f"]
+[gd_scene load_steps=6 format=3 uid="uid://dx1kv0yolv62f"]
 
 [ext_resource type="Script" uid="uid://c87o5co7qxqug" path="res://animals/animal.gd" id="1_ru4hs"]
 [ext_resource type="Texture2D" uid="uid://dhtaae48clwy2" path="res://icon.svg" id="1_wbqs1"]
 [ext_resource type="PackedScene" uid="uid://jwjd3lnov0f6" path="res://animals/movement_component.tscn" id="2_myonj"]
 [ext_resource type="PackedScene" uid="uid://b7xcalm03kg7h" path="res://animals/spawning_component.tscn" id="3_7qnhv"]
 
-[node name="Animal" type="Node2D" node_paths=PackedStringArray("movement_component", "spawning_component")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru4hs"]
+size = Vector2(14, 14)
+
+[node name="Animal" type="RigidBody2D" node_paths=PackedStringArray("movement_component", "spawning_component")]
+gravity_scale = 0.0
 script = ExtResource("1_ru4hs")
 movement_component = NodePath("Movement")
 spawning_component = NodePath("Spawning")
@@ -21,3 +25,6 @@ texture = ExtResource("1_wbqs1")
 [node name="Spawning" parent="." instance=ExtResource("3_7qnhv")]
 
 [node name="Interaction" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ru4hs")

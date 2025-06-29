@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cjoopt7sa25gn"]
+[gd_scene load_steps=2 format=3 uid="uid://cjoopt7sa25gn"]
+
+[ext_resource type="Script" uid="uid://cdf06ehe8fj86" path="res://animals/bergyBush.gd" id="1_mojmh"]
 
 [node name="BergyBush" type="Node2D"]
+script = ExtResource("1_mojmh")
