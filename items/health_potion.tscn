@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bju1xu2dbpftm"]
+
+[ext_resource type="PackedScene" uid="uid://bir6tqadxypdl" path="res://items/item.tscn" id="1_4yp8p"]
+[ext_resource type="Texture2D" uid="uid://4xgipyjihyu4" path="res://addons/rubonnek.inventory_manager/demos/inventory_icons/items.atlas_textures/health_potion.tres" id="2_akukh"]
+
+[node name="Health Potion" instance=ExtResource("1_4yp8p")]
+title = "Health Potion"
+icon = ExtResource("2_akukh")
+description = "Restores 50 health."

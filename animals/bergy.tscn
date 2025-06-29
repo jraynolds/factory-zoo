@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://toct5ovgirh7"]
+[gd_scene load_steps=2 format=3 uid="uid://dbiousd3wwlgs"]
 
-[node name="Bergy" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://c6gq4hodlea5s" path="res://animals/animal.tscn" id="1_kf1ax"]
+
+[node name="Bergy" instance=ExtResource("1_kf1ax")]
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(1, 1, 0, 1)

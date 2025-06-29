@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsky802capcnl"]
+
+[ext_resource type="Script" uid="uid://2p22cik08l1s" path="res://ui/item_button.gd" id="1_sm061"]
+
+[node name="ItemButton" type="PanelContainer" node_paths=PackedStringArray("button")]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_sm061")
+button = NodePath("Button")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_vertical = 4
+text = "
+99"
+alignment = 2
+icon_alignment = 1

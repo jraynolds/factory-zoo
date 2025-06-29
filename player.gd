@@ -1,5 +1,6 @@
 extends CharacterBody2D
 class_name Player
+## Class for the player model.
 
 @export var movement_speed : float = .1
 

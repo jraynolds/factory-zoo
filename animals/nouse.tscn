@@ -1,12 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqi3ug0mu12vq"]
+[gd_scene load_steps=2 format=3 uid="uid://1t6skxj0rb3"]
 
-[ext_resource type="PackedScene" uid="uid://dx1kv0yolv62f" path="res://animals/animal.tscn" id="1_h0yvy"]
+[ext_resource type="PackedScene" uid="uid://c6gq4hodlea5s" path="res://animals/animal.tscn" id="1_h0yvy"]
 
 [node name="Nouse" instance=ExtResource("1_h0yvy")]
 
-[node name="Sprite2D" parent="." index="0"]
-modulate = Color(0.905882, 0.12549, 0.364706, 1)
-
-[node name="Movement" parent="." index="1"]
-movement_interval = 5.0
-grid_size = Vector2(16, 16)
+[node name="Sprite2D" parent="." index="1"]
+self_modulate = Color(0.0117647, 0.270588, 1, 1)

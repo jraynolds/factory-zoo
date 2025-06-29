@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Factory Zoo"
-run/main_scene="uid://p2b06bnmv0tg"
+run/main_scene="uid://crag6v4u6l400"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Map="*res://map.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/rubonnek.inventory_manager/plugin.cfg")
 
 [input]
 
