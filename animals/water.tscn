@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://by00756844dbv"]
+
+[ext_resource type="Script" uid="uid://bnouygq2v8hua" path="res://animals/water.gd" id="1_lyihx"]
+
+[node name="Water" type="Node2D"]
+script = ExtResource("1_lyihx")
