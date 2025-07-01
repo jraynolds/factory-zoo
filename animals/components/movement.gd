@@ -24,14 +24,19 @@ func _process(delta: float) -> void:
 ## Moves the parent in a given direction.
 func move(direction: Cardinal):
 	var loc = get_parent().position
+	var targetLoc = get_parent().position
 	loc.y -= grid_size.y
 	assert(direction != null, "No given direction!")
 	match direction:
 		Cardinal.Up:
-			get_parent().position.y -= grid_size.y
+			targetLoc.y = get_parent().position.y - grid_size.y
 		Cardinal.Down:
-			get_parent().position.y += grid_size.y
+			targetLoc.y = get_parent().position.y + grid_size.y
 		Cardinal.Left:
-			get_parent().position.x -= grid_size.x
+			targetLoc.x = get_parent().position.x - grid_size.x
 		Cardinal.Right:
-			get_parent().position.x += grid_size.x
+			targetLoc.x = get_parent().position.x + grid_size.x
+	for animal in Map.animal_container.get_children():
+		if animal.position == targetLoc:
+			return
+	get_parent().position = targetLoc
