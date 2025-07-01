@@ -27,17 +27,10 @@ func spawn():
 	var animal = animal_parent.packed_animal.instantiate()
 	animal.packed_animal = animal_parent.packed_animal
 	Map.add_animal(animal, get_parent().position)
-	while animal.position == animal_parent.position :
-		animal.movement_component.move(Movement.Cardinal.values().pick_random())
+	animal.movement_component.move(Movement.Cardinal.values().pick_random())
 
-# Spawns a given animal and movies it cardinally		
-func animalSpawn(obj):
-	Map.add_animal(obj, get_parent().position)
-	while obj.position == animal_parent.position :
-		obj.movement_component.move(Movement.Cardinal.values().pick_random())
-		
+
 ## Spawns a given entity at a given location
 func targetSpawn(loc : Vector2, obj):
-	Map.add_animal(obj, loc)
-	## Map.animalContainer.add_child(obj)
-	## obj.position = loc
+	Map.animalContainer.add_child(obj)
+	obj.position = loc

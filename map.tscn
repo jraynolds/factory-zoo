@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://co6jt6o3titnp"]
+[gd_scene load_steps=10 format=4 uid="uid://bl1h3drwbbrxa"]
 
 [ext_resource type="Script" uid="uid://8nyrib47x0aj" path="res://map.gd" id="1_c7s6e"]
-[ext_resource type="PackedScene" uid="uid://c73b2v6mq4fns" path="res://player.tscn" id="2_wijl4"]
+[ext_resource type="PackedScene" uid="uid://ko2d2bol0yvm" path="res://player.tscn" id="2_wijl4"]
 [ext_resource type="Texture2D" uid="uid://fb0ddxij4vtx" path="res://assets/art/village tileset.png" id="3_e0an3"]
 [ext_resource type="PackedScene" uid="uid://dkdl8y036kar8" path="res://animals/katt.tscn" id="3_iw27f"]
 [ext_resource type="PackedScene" uid="uid://1t6skxj0rb3" path="res://animals/nouse.tscn" id="4_71pa8"]
@@ -1076,6 +1076,7 @@ offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Inventory" parent="CanvasLayer/PanelContainer" instance=ExtResource("7_71pa8")]
+[node name="Inventory" parent="CanvasLayer/PanelContainer" node_paths=PackedStringArray("items_container") instance=ExtResource("7_71pa8")]
 layout_mode = 2
 size_flags_horizontal = 4
+items_container = NodePath("Items container")
