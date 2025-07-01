@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://clcgt5acaxbe1"]
+
+[ext_resource type="PackedScene" uid="uid://cbw40d4v0513l" path="res://entities/entity.tscn" id="1_h0wai"]
+[ext_resource type="Script" uid="uid://co0xssvdo6t17" path="res://entities/animals/bergy_bush.gd" id="2_dvfk0"]
+
+[node name="BergyBush" instance=ExtResource("1_h0wai")]
+script = ExtResource("2_dvfk0")
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.188235, 1, 0, 0.227451)
+
+[node name="Spawning" parent="." index="2"]
+spawning = false

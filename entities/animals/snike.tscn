@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd0m81mhxdblm"]
+
+[ext_resource type="PackedScene" uid="uid://cculscm15b4yx" path="res://entities/animals/animal.tscn" id="1_nc7lm"]
+
+[node name="Snike" instance=ExtResource("1_nc7lm")]
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(1, 0.00392157, 1, 1)

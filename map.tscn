@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=4 uid="uid://bl1h3drwbbrxa"]
+[gd_scene load_steps=11 format=4 uid="uid://bl1h3drwbbrxa"]
 
 [ext_resource type="Script" uid="uid://8nyrib47x0aj" path="res://map.gd" id="1_c7s6e"]
 [ext_resource type="PackedScene" uid="uid://ko2d2bol0yvm" path="res://player.tscn" id="2_wijl4"]
 [ext_resource type="Texture2D" uid="uid://fb0ddxij4vtx" path="res://assets/art/village tileset.png" id="3_e0an3"]
-[ext_resource type="PackedScene" uid="uid://dkdl8y036kar8" path="res://animals/katt.tscn" id="3_iw27f"]
-[ext_resource type="PackedScene" uid="uid://1t6skxj0rb3" path="res://animals/nouse.tscn" id="4_71pa8"]
-[ext_resource type="PackedScene" uid="uid://ge0otx76pwm3" path="res://animals/snike.tscn" id="5_05x41"]
+[ext_resource type="PackedScene" uid="uid://b2w7untie3iin" path="res://entities/animals/katt.tscn" id="3_iw27f"]
+[ext_resource type="PackedScene" uid="uid://drqchkbjd7e4f" path="res://entities/animals/nouse.tscn" id="4_71pa8"]
+[ext_resource type="PackedScene" uid="uid://cd0m81mhxdblm" path="res://entities/animals/snike.tscn" id="5_05x41"]
+[ext_resource type="PackedScene" uid="uid://clcgt5acaxbe1" path="res://entities/animals/bergy_bush.tscn" id="6_05x41"]
 [ext_resource type="PackedScene" uid="uid://bne7m0o8otuca" path="res://ui/inventory.tscn" id="7_71pa8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5pve"]
@@ -1037,27 +1038,27 @@ texture = ExtResource("3_e0an3")
 [sub_resource type="TileSet" id="TileSet_urblq"]
 sources/0 = SubResource("TileSetAtlasSource_p5pve")
 
-[node name="Map" type="Node2D" node_paths=PackedStringArray("animal_container")]
+[node name="Map" type="Node2D" node_paths=PackedStringArray("entity_container")]
 script = ExtResource("1_c7s6e")
-animal_container = NodePath("Animals")
+entity_container = NodePath("Entities")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD9////AAAJABEAAAD9/wAAAAAIAA4AAAD9/wEAAAAJAA4AAAD9/wIAAAAJAA8AAAD+////AAAKABEAAAD+/wAAAAAJAA4AAAD+/wEAAAAKAA4AAAD+/wIAAAAKAA8AAAD/////AAAFABEAAAD//wAAAAAKAA4AAAD//wEAAAAXABAAAAD//wIAAAAXABEAAAAAAP//AAAGABEAAAAAAAAAAAAHAA8AAAAAAAEAAAAYABAAAAAAAAIAAAAYABEAAAABAP//AAAEAA8AAAABAAAAAAAEABAAAAABAAEAAAAEABEAAAABAAIAAAAEAA8AAAACAP//AAAFAA8AAAACAAAAAAAFABAAAAACAAEAAAAFABEAAAACAAIAAAAFAA8AAAADAP//AAAGAA8AAAADAAAAAAAGABAAAAADAAEAAAAGABEAAAADAAIAAAAGAA8AAAD+//z/AAAKAA4AAAD+//3/AAAKAA8AAAD+//7/AAAKABAAAAD///z/AAAFAA4AAAD///3/AAAFAA8AAAD///7/AAAFABAAAAAAAPz/AAAGAA4AAAAAAP3/AAAGAA8AAAAAAP7/AAAGABAAAAABAPz/AAAEAA4AAAABAP3/AAAEAA8AAAABAP7/AAAEAA4AAAACAPz/AAAFAA4AAAACAP3/AAAFAA8AAAACAP7/AAAFAA4AAAADAPz/AAAGABcAAAADAP3/AAAGABgAAAADAP7/AAAGAA4AAAAEAPz/AAAHABcAAAAEAP3/AAAHABgAAAAEAP7/AAAHAA4AAAAEAP//AAAHAA8AAAD4//3/AAAEAA8AAAD4//7/AAAEABAAAAD4////AAAEABEAAAD4/wAAAAAEABEAAAD5//3/AAAFAA8AAAD5//7/AAAFABAAAAD5////AAAFABEAAAD5/wAAAAAEAA4AAAD6//3/AAAGAA8AAAD6//7/AAAGABAAAAD6////AAAGABEAAAD6/wAAAAAFAA4AAAD7//3/AAAHAA8AAAD7//7/AAAHABAAAAD7////AAAHABEAAAD7/wAAAAAGAA4AAAD8//3/AAAIAA8AAAD8//7/AAAIABAAAAD8////AAAIABEAAAD8/wAAAAAHAA4AAAD9//3/AAAJAA8AAAD9//7/AAAJABAAAAABAAMAAAAJAA4AAAABAAQAAAAJAA8AAAACAAMAAAAKAA4AAAACAAQAAAAKAA8AAAADAAMAAAAGAA4AAAADAAQAAAAGAA8AAAAEAAEAAAAHABEAAAAEAAIAAAAHAA8AAAAEAAMAAAAHAA4AAAAEAAQAAAAHAA8AAAAFAAEAAAAIABEAAAAFAAIAAAAIAA8AAAAFAAMAAAAIAA4AAAAFAAQAAAAIAA8AAAAGAAEAAAAJABEAAAAGAAIAAAAJAA8AAAAGAAMAAAAJAA4AAAAGAAQAAAAJAA8AAAAHAAEAAAAKABEAAAAHAAIAAAAKAA8AAAAHAAMAAAAKAA4AAAAHAAQAAAAKAA8AAAD5/wEAAAAFAA4AAAD5/wIAAAABABAAAAD5/wMAAAAAABAAAAD6/wEAAAAGAA4AAAD6/wIAAAAGAA8AAAD6/wMAAAABABAAAAD7/wEAAAAHAA4AAAD7/wIAAAAHAA8AAAD7/wMAAAAHAA4AAAD8/wEAAAAIAA4AAAD8/wIAAAAIAA8AAAD8/wMAAAAEAA4AAAD9/wMAAAAFAA4AAAD+/wMAAAAGAA4AAAD//wMAAAAHAA4AAAD6/wQAAAACABMAAAD7/wQAAAADABUAAAD8/wQAAAAEABUAAAD9/wQAAAAFAA8AAAD+/wQAAAAGAA8AAAD//wQAAAAHAA8AAAAAAAMAAAAIAA4AAAAAAAQAAAAIAA8AAAD5/wQAAAAAABAAAAD4/wEAAAAEAA4AAAD4/wIAAAAAABAAAAD4/wMAAAAAABEAAAD4/wQAAAAAABIAAAD4//z/AAAEAA4AAAD5//z/AAAFAA4AAAD6//z/AAAGAA4AAAD7//z/AAAHAA4AAAD8//z/AAAIAA4AAAD9//z/AAAJAA4AAAAFAPz/AAAIABcAAAAFAP3/AAAIABgAAAAFAP7/AAAIAA4AAAAFAP//AAAIAA8AAAAGAPz/AAAJABcAAAAGAP3/AAAJABgAAAAGAP7/AAAJAA4AAAAGAP//AAAJAA8AAAAHAPz/AAAKABcAAAAHAP3/AAAKABgAAAAHAP7/AAAKAA4AAAAHAP//AAAKAA8AAAAEAAAAAAAHABAAAAAFAAAAAAAIABAAAAAGAAAAAAAJABAAAAAHAAAAAAAKABAAAAABAAUAAAAJABAAAAABAAYAAAAJABEAAAACAAUAAAAKABAAAAACAAYAAAAKABEAAAADAAUAAAAGABAAAAADAAYAAAAGABEAAAAEAAUAAAAHABAAAAAEAAYAAAAHABEAAAAFAAUAAAAIABAAAAAFAAYAAAAIABEAAAAGAAUAAAAJABAAAAAGAAYAAAAJABEAAAAHAAUAAAAKABAAAAAHAAYAAAAKABEAAAD4/wUAAAAAABEAAAD4/wYAAAAAABIAAAD5/wUAAAAAABEAAAD5/wYAAAAAABIAAAD6/wUAAAACABQAAAD6/wYAAAABABIAAAD7/wUAAAADABYAAAD7/wYAAAAHABEAAAD8/wUAAAAEABYAAAD8/wYAAAAEABEAAAD9/wUAAAAFABAAAAD9/wYAAAAFABEAAAD+/wUAAAAGABAAAAD+/wYAAAAGABEAAAD//wUAAAAHABAAAAD//wYAAAAHABEAAAAAAAUAAAAIABAAAAAAAAYAAAAIABEAAAA=")
 tile_set = SubResource("TileSet_urblq")
 
-[node name="Animals" type="Node2D" parent="."]
+[node name="Entities" type="Node2D" parent="."]
 
-[node name="Katt" parent="Animals" instance=ExtResource("3_iw27f")]
-position = Vector2(-104, -41)
-packed_animal = ExtResource("3_iw27f")
+[node name="Katt" parent="Entities" instance=ExtResource("3_iw27f")]
+position = Vector2(-104, -25)
 
-[node name="Nouse" parent="Animals" instance=ExtResource("4_71pa8")]
-position = Vector2(104, 72)
-packed_animal = ExtResource("4_71pa8")
+[node name="Nouse" parent="Entities" instance=ExtResource("4_71pa8")]
+position = Vector2(104, 9)
 
-[node name="Snike" parent="Animals" instance=ExtResource("5_05x41")]
-position = Vector2(-72, 56)
-packed_animal = ExtResource("5_05x41")
+[node name="Snike" parent="Entities" instance=ExtResource("5_05x41")]
+position = Vector2(-39, 89)
+
+[node name="BergyBush" parent="Entities" instance=ExtResource("6_05x41")]
+position = Vector2(24, 56)
 
 [node name="Player" parent="." instance=ExtResource("2_wijl4")]
 position = Vector2(-8, 8)

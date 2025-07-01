@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkdl8y036kar8"]
-
-[ext_resource type="PackedScene" uid="uid://c6gq4hodlea5s" path="res://animals/animal.tscn" id="1_y5xe3"]
-
-[node name="Katt" instance=ExtResource("1_y5xe3")]
-
-[node name="Sprite2D" parent="." index="1"]
-self_modulate = Color(1, 0.368627, 1, 1)

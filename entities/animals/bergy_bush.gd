@@ -1,4 +1,4 @@
-extends Animal
+extends Entity
 class_name BergyBush
 
 var watered : bool = false
@@ -11,6 +11,7 @@ func _ready():
 func _process(delta):
 	pass
 	
+
 func _physics():
 	#for animal in Map.animal_container.get_children():
 		#if animal is Water:

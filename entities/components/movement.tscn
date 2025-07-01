@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp8nqm700o14n"]
+
+[ext_resource type="Script" uid="uid://dill3h4ri20j5" path="res://entities/components/movement.gd" id="1_ladg2"]
+
+[node name="Movement" type="Node2D"]
+script = ExtResource("1_ladg2")
+movement_interval = 3.5

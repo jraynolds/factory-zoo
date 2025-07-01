@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drqchkbjd7e4f"]
+
+[ext_resource type="PackedScene" uid="uid://cculscm15b4yx" path="res://entities/animals/animal.tscn" id="1_fcgo0"]
+
+[node name="Nouse" instance=ExtResource("1_fcgo0")]
+modulate = Color(0.388235, 1, 0, 1)

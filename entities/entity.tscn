@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbw40d4v0513l"]
+
+[ext_resource type="Script" uid="uid://b1wjt0ifhacvk" path="res://entities/entity.gd" id="1_jm4vq"]
+[ext_resource type="Texture2D" uid="uid://88qjhfyusrtt" path="res://icon.svg" id="2_ep4xq"]
+[ext_resource type="PackedScene" uid="uid://bjj420bfo3qai" path="res://entities/components/spawning.tscn" id="3_vb6m3"]
+[ext_resource type="PackedScene" uid="uid://c4dk4bs74lbmx" path="res://entities/components/interaction.tscn" id="4_swdi0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5oec"]
+size = Vector2(14, 14)
+
+[node name="Entity" type="RigidBody2D" node_paths=PackedStringArray("sprite", "collision_shape", "spawning_component", "interaction_component")]
+gravity_scale = 0.0
+script = ExtResource("1_jm4vq")
+sprite = NodePath("Sprite2D")
+collision_shape = NodePath("CollisionShape2D")
+spawning_component = NodePath("Spawning")
+interaction_component = NodePath("Interaction")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ep4xq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w5oec")
+
+[node name="Spawning" parent="." instance=ExtResource("3_vb6m3")]
+spawning = true
+
+[node name="Interaction" parent="." instance=ExtResource("4_swdi0")]
