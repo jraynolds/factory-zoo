@@ -1076,7 +1076,6 @@ offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Inventory" parent="CanvasLayer/PanelContainer" node_paths=PackedStringArray("items_container") instance=ExtResource("7_71pa8")]
+[node name="Inventory" parent="CanvasLayer/PanelContainer" instance=ExtResource("7_71pa8")]
 layout_mode = 2
 size_flags_horizontal = 4
-items_container = NodePath("Items container")
