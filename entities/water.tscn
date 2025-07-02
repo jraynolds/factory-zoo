@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://raxydfxi3alr"]
 
-[ext_resource type="Script" uid="uid://b1wjt0ifhacvk" path="res://entities/entity.gd" id="1_n361b"]
+[ext_resource type="Script" uid="uid://da0vq7kv7nwfx" path="res://entities/water.gd" id="1_v5bw3"]
 [ext_resource type="Texture2D" uid="uid://brll4r7d1qwe0" path="res://assets/art/blue.png" id="2_v5bw3"]
 [ext_resource type="PackedScene" uid="uid://bjj420bfo3qai" path="res://entities/components/spawning.tscn" id="3_jqrbq"]
 [ext_resource type="PackedScene" uid="uid://c4dk4bs74lbmx" path="res://entities/components/interaction.tscn" id="4_8c2o7"]
@@ -8,8 +8,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_764cg"]
 size = Vector2(14, 14)
 
-[node name="Water" type="RigidBody2D"]
-script = ExtResource("1_n361b")
+[node name="Water" type="RigidBody2D" node_paths=PackedStringArray("sprite", "collision_shape", "spawning_component", "interaction_component")]
+gravity_scale = 0.0
+script = ExtResource("1_v5bw3")
+sprite = NodePath("Sprite2D")
+collision_shape = NodePath("CollisionShape2D")
+spawning_component = NodePath("Spawning")
+interaction_component = NodePath("Interaction")
 metadata/_custom_type_script = "uid://b1wjt0ifhacvk"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
