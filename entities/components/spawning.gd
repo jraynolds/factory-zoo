@@ -23,17 +23,24 @@ func _process(delta: float) -> void:
 		spawn_interval_left = spawn_interval
 		spawn()
 
+func spawnOther(spawned_entity : Entity):
+	var spawn_location = Map.get_random_empty_neighbor_location(get_parent().position)
+	spawned_entity.visible = false
+	assert(spawn_location != null, "We couldn't find a valid neighboring location!")
+	Map.add_entity(spawned_entity, spawn_location)
+	
 ## Spawns a new entity copy of us.
 ## If it can move, it moves cardinally. 
 ## should do move check first to save time
+## [I] Moved this into spawnOther but left notes because idk wtf is going on
 func spawn():
-	var spawn_location = Map.get_random_empty_neighbor_location(get_parent().position)
+	#var spawn_location = Map.get_random_empty_neighbor_location(get_parent().position)
 	var spawned_entity = load(get_parent().scene_file_path).instantiate()
-	spawned_entity.visible = false
+	#spawned_entity.visible = false
 	#var duplicate = get_parent().duplicate(7) ## 7 is the bitwise flag for "copy everything"
 	#var duplicate = get_parent() ## 7 is the bitwise flag for "copy everything"
-	assert(spawn_location != null, "We couldn't find a valid neighboring location!")
-	Map.add_entity(spawned_entity, spawn_location)
+	#assert(spawn_location != null, "We couldn't find a valid neighboring location!")
+	#Map.add_entity(spawned_entity, spawn_location)
 	#var animal = animal_parent.packed_animal.instantiate()
 	#animal.packed_animal = animal_parent.packed_animal
 	#Map.add_animal(animal, get_parent().position)
@@ -45,6 +52,7 @@ func spawn():
 		#if animal.position != animal_parent.position:
 			#return
 	#animal.queue_free()
+	spawnOther(spawned_entity)
 
 ### Spawns a given entity at a given location
 #func targetSpawn(loc : Vector2, obj):

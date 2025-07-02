@@ -9,14 +9,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if watered:
+		spawning_component.spawnOther(load("res://entities/bergy.gd").instantiate())
 	
 
 func _physics():
-	#for animal in Map.animal_container.get_children():
-		#if animal is Water:
-			#if  position.distance_to(animal.position)< 16:
-				#watered = true
-				#return
-	#watered = false
+	for obj in Map.entity_container.entities():
+		var water = obj as Water
+		if water:
+			if  position.distance_to(obj.position)<= 16:
+				watered = true
+				return
+	watered = false
 	return

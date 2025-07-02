@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bl1h3drwbbrxa"]
+[gd_scene load_steps=12 format=4 uid="uid://bl1h3drwbbrxa"]
 
 [ext_resource type="Script" uid="uid://8nyrib47x0aj" path="res://map.gd" id="1_c7s6e"]
 [ext_resource type="PackedScene" uid="uid://ko2d2bol0yvm" path="res://player.tscn" id="2_wijl4"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cd0m81mhxdblm" path="res://entities/animals/snike.tscn" id="5_05x41"]
 [ext_resource type="PackedScene" uid="uid://clcgt5acaxbe1" path="res://entities/animals/bergy_bush.tscn" id="6_05x41"]
 [ext_resource type="PackedScene" uid="uid://bne7m0o8otuca" path="res://ui/inventory.tscn" id="7_71pa8"]
+[ext_resource type="PackedScene" uid="uid://raxydfxi3alr" path="res://entities/water.tscn" id="9_gqbix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5pve"]
 texture = ExtResource("3_e0an3")
@@ -1047,6 +1048,9 @@ tile_map_data = PackedByteArray("AAD9////AAAJABEAAAD9/wAAAAAIAA4AAAD9/wEAAAAJAA4
 tile_set = SubResource("TileSet_urblq")
 
 [node name="Entities" type="Node2D" parent="."]
+
+[node name="Water" parent="Entities" instance=ExtResource("9_gqbix")]
+position = Vector2(-8, 56)
 
 [node name="Katt" parent="Entities" instance=ExtResource("3_iw27f")]
 position = Vector2(-104, -25)
