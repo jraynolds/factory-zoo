@@ -34,6 +34,7 @@ func _ready() -> void:
 	
 	# Add health potions
 	add_item("Health Potion", 99 + 50)
+	add_item("Bergy", 10)
 	# By default the stack capacity is 99 items. The line above added two stacks on the first two item slots: one of 99 potions and another of 50 potions.
 
 
