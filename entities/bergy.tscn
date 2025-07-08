@@ -1,34 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dao64c50eqw0y"]
+[gd_scene load_steps=3 format=3 uid="uid://dh8t1akglullk"]
 
-[ext_resource type="Script" uid="uid://b1wjt0ifhacvk" path="res://entities/entity.gd" id="1_aumqv"]
-[ext_resource type="Texture2D" uid="uid://88qjhfyusrtt" path="res://icon.svg" id="2_slpwr"]
-[ext_resource type="PackedScene" uid="uid://bjj420bfo3qai" path="res://entities/components/spawning.tscn" id="3_4tmvy"]
-[ext_resource type="PackedScene" uid="uid://c4dk4bs74lbmx" path="res://entities/components/interaction.tscn" id="4_8tcto"]
+[ext_resource type="PackedScene" uid="uid://cbw40d4v0513l" path="res://entities/entity.tscn" id="1_aumqv"]
+[ext_resource type="Script" uid="uid://bqxse81lsslos" path="res://entities/bergy.gd" id="2_6jl1l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2xjm"]
-size = Vector2(14, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_slpwr"]
-
-[node name="Bergy" type="RigidBody2D"]
+[node name="Bergy" instance=ExtResource("1_aumqv")]
 collision_layer = 0
 collision_mask = 0
-gravity_scale = 0.0
-script = ExtResource("1_aumqv")
-metadata/_custom_type_script = "uid://b1wjt0ifhacvk"
+script = ExtResource("2_6jl1l")
+title = "Bergy"
+description = "A tasty berry."
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_slpwr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_l2xjm")
-
-[node name="Spawning" parent="." instance=ExtResource("3_4tmvy")]
-spawning = true
-
-[node name="Interaction" parent="." instance=ExtResource("4_8tcto")]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("RectangleShape2D_slpwr")
+[node name="Interaction" parent="." index="3"]
+enabled = true

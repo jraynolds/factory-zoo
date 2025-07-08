@@ -16,6 +16,8 @@ func _init() -> void:
 
 ## Called every frame. Spawns on an interval.
 func _process(delta: float) -> void:
+	if !is_visible_in_tree(): ## Skip spawning if this component is invisible.
+		return
 	if !spawning:
 		return
 	spawn_interval_left -= delta

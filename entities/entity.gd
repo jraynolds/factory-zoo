@@ -7,7 +7,7 @@ class_name Entity
 
 @export var spawning_component : Spawning ## The spawning component for this Entity.
 @export var interaction_component : Interaction ## The interactivity component for this Entity.
-@export var description : String
-@export var title : String
-var icon : Sprite2D :
-	get: return sprite
+@export var title : String ## The title of this Entity.
+@export_multiline var description : String ## A longer description for this Entity.
+var icon : Texture2D : ## The texture we display for this Entity.
+	get: return sprite.texture

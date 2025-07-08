@@ -2,13 +2,13 @@ extends HBoxContainer
 class_name Inventory
 
 @export var items_container : Node2D
-var items : Array[Item] :
+var items : Array :
 	get :
-		var out : Array[Item] = []
+		var out : Array = []
 		for child in items_container.get_children():
-			var item = child as Item
-			if item:
-				out.append(item)
+			#var item = child as Item
+			#if item:
+			out.append(child)
 		return out
 @export var item_buttons : Array[ItemButton]
 
@@ -28,6 +28,8 @@ func _ready() -> void:
 			item.description,
 			item.icon
 		)
+	for item in items:
+		print(item.title)
 
 	# Create an inventory with the item information just configured
 	inventory_manager = InventoryManager.new(item_registry)
@@ -46,7 +48,9 @@ func add_item_to_registry(id: int, item_name: String, item_description: String, 
 ## Add an Item to the player's inventory with the given amount (by default, 1) at the given inventory index (by default, 0).
 ## Returns an ExcessItems object.
 func add_item(item_name: String, amount: int=1, index: int = 0) -> ExcessItems:
-	var item : Item = items.filter(func(item): return item.title == item_name)[0]
+	var matching_items : Array = items.filter(func(item): return item.title == item_name)
+	assert(!matching_items.is_empty(), "No matching items for item name " + item_name + "!")
+	var item = items.filter(func(item): return item.title == item_name)[0]
 	item_buttons[index].set_item(item, amount)
 	assert(item)
 	return inventory_manager.add(items.find(item), amount)

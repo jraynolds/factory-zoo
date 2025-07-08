@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ctf3qwqk4fk4b" path="res://ui/inventory.gd" id="1_kosh3"]
 [ext_resource type="PackedScene" uid="uid://bju1xu2dbpftm" path="res://items/health_potion.tscn" id="2_olbmd"]
 [ext_resource type="PackedScene" uid="uid://bsky802capcnl" path="res://ui/item_button.tscn" id="3_4smma"]
-[ext_resource type="PackedScene" uid="uid://dh8t1akglullk" path="res://entities/bergy.tscn" id="3_wurve"]
+[ext_resource type="PackedScene" uid="uid://dao64c50eqw0y" path="res://entities/bergy.tscn" id="3_wurve"]
 
 [node name="Inventory" type="HBoxContainer" node_paths=PackedStringArray("items_container", "item_buttons")]
 script = ExtResource("1_kosh3")
@@ -13,10 +13,9 @@ item_buttons = [NodePath("ItemButton"), NodePath("ItemButton2"), NodePath("ItemB
 [node name="Items container" type="Node2D" parent="."]
 
 [node name="Health Potion" parent="Items container" instance=ExtResource("2_olbmd")]
-visible = false
 
 [node name="Bergy" parent="Items container" instance=ExtResource("3_wurve")]
-visible = false
+description = "A funny fruit"
 
 [node name="ItemButton" parent="." instance=ExtResource("3_4smma")]
 layout_mode = 2

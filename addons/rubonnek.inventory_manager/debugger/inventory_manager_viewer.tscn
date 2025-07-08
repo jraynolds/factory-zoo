@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7icg0tbtwioq"]
 
-[ext_resource type="Script" path="res://addons/rubonnek.inventory_manager/debugger/inventory_manager_viewer.gd" id="1_tvtkg"]
+[ext_resource type="Script" uid="uid://7os660kiifr2" path="res://addons/rubonnek.inventory_manager/debugger/inventory_manager_viewer.gd" id="1_tvtkg"]
 
 [node name="InventoryManager" type="PanelContainer" node_paths=PackedStringArray("inventory_manager_viewer_manager_selection_line_edit_", "inventory_manager_viewer_manager_selection_tree_", "inventory_manager_viewer_item_slots_tree_", "inventory_manager_viewer_item_slots_view_warning_label_", "inventory_manager_viewer_inventory_data_view_text_edit_", "inventory_manager_viewer_inventory_data_view_warning_label_")]
 custom_minimum_size = Vector2(0, 240)
@@ -68,10 +68,12 @@ vertical_alignment = 1
 [node name="InventoryManagerViewerItemSlotsViewTabContainer" type="TabContainer" parent="InventoryManagerViewerHSplitContainer/InventoryManagerViewerHSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+current_tab = 0
 
 [node name="Slot Data" type="VBoxContainer" parent="InventoryManagerViewerHSplitContainer/InventoryManagerViewerHSplitContainer/InventoryManagerViewerItemSlotsViewTabContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+metadata/_tab_index = 0
 
 [node name="InventoryManagerViewerInventoryDataViewTextEditLabel" type="TextEdit" parent="InventoryManagerViewerHSplitContainer/InventoryManagerViewerHSplitContainer/InventoryManagerViewerItemSlotsViewTabContainer/Slot Data"]
 layout_mode = 2

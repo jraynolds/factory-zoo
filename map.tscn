@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cd0m81mhxdblm" path="res://entities/animals/snike.tscn" id="5_05x41"]
 [ext_resource type="PackedScene" uid="uid://clcgt5acaxbe1" path="res://entities/animals/bergy_bush.tscn" id="6_05x41"]
 [ext_resource type="PackedScene" uid="uid://bne7m0o8otuca" path="res://ui/inventory.tscn" id="7_71pa8"]
-[ext_resource type="PackedScene" uid="uid://dao64c50eqw0y" path="res://entities/bergy.tscn" id="8_oysan"]
+[ext_resource type="PackedScene" uid="uid://dh8t1akglullk" path="res://entities/bergy.tscn" id="8_oysan"]
 [ext_resource type="PackedScene" uid="uid://raxydfxi3alr" path="res://entities/water.tscn" id="9_gqbix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5pve"]
@@ -1066,10 +1066,10 @@ position = Vector2(-39, 89)
 position = Vector2(24, 56)
 
 [node name="Bergy" parent="Entities" instance=ExtResource("8_oysan")]
-position = Vector2(24, 24)
+position = Vector2(41, -56)
 
 [node name="Player" parent="." instance=ExtResource("2_wijl4")]
-position = Vector2(-8, 8)
+position = Vector2(-7, -24)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
