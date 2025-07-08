@@ -23,16 +23,21 @@ func _process(delta: float) -> void:
 		velocity.y = -movement_speed
 	else :
 		velocity.y = 0
-
-
+	
+	## only works with one item right now
+	if Input.is_action_just_pressed("pickup"):
+		for object in interactable_objects :
+			Inventory.add_item(object.title)
+			object.queue_free() ## is this correct?
+			
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
 func add_interactable_object(object):
 	if object not in interactable_objects:
-		interactable_objects.append(object)
-	InteractionReadout.set_readout('Press "E" to pick up Bergy (1)')
+		interactable_objects.append(object)	
+	InteractionReadout.set_readout('Press "E" to pick up Bergy (1)') ## needs to change text based on object
 
 
 func remove_interactable_object(object):

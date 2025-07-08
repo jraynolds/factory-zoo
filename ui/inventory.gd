@@ -1,5 +1,5 @@
 extends HBoxContainer
-class_name Inventory
+# class_name Inventory
 
 @export var items_container : Node2D
 var items : Array :
