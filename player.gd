@@ -8,6 +8,7 @@ var interactable_object : Object : ## The highest priority interactable object f
 	get :
 		return interactable_objects[0] if !interactable_objects.is_empty() else null ## Return null if there's no interactables.
 
+
 func _process(delta: float) -> void:
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("left"):
@@ -27,7 +28,6 @@ func _process(delta: float) -> void:
 	## only works with one item right now
 	if Input.is_action_just_pressed("pickup"):
 		for object in interactable_objects :
-			Inventory.add_item(object.title)
 			object.queue_free() ## is this correct?
 			
 func _physics_process(delta: float) -> void:

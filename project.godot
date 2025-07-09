@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 Map="*res://map.tscn"
 InteractionReadout="*res://ui/interaction_readout.tscn"
-Inventory="*res://ui/inventory.tscn"
 
 [editor_plugins]
 
