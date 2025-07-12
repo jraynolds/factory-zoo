@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bl1h3drwbbrxa"]
+[gd_scene load_steps=12 format=4 uid="uid://bl1h3drwbbrxa"]
 
 [ext_resource type="Script" uid="uid://8nyrib47x0aj" path="res://map.gd" id="1_c7s6e"]
 [ext_resource type="PackedScene" uid="uid://ko2d2bol0yvm" path="res://player.tscn" id="2_wijl4"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://drqchkbjd7e4f" path="res://entities/animals/nouse.tscn" id="4_71pa8"]
 [ext_resource type="PackedScene" uid="uid://cd0m81mhxdblm" path="res://entities/animals/snike.tscn" id="5_05x41"]
 [ext_resource type="PackedScene" uid="uid://clcgt5acaxbe1" path="res://entities/animals/bergy_bush.tscn" id="6_05x41"]
-[ext_resource type="PackedScene" uid="uid://bne7m0o8otuca" path="res://ui/inventory.tscn" id="7_71pa8"]
 [ext_resource type="PackedScene" uid="uid://dh8t1akglullk" path="res://entities/bergy.tscn" id="8_oysan"]
 [ext_resource type="PackedScene" uid="uid://raxydfxi3alr" path="res://entities/water.tscn" id="9_gqbix"]
 
@@ -1070,21 +1069,3 @@ position = Vector2(41, -56)
 
 [node name="Player" parent="." instance=ExtResource("2_wijl4")]
 position = Vector2(-7, -24)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 238.0
-offset_top = -113.0
-offset_right = -248.0
-offset_bottom = -21.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Inventory" parent="CanvasLayer/PanelContainer" instance=ExtResource("7_71pa8")]
-layout_mode = 2
-size_flags_horizontal = 4
