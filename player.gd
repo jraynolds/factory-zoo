@@ -33,6 +33,9 @@ func _process(delta: float) -> void:
 			object.queue_free() ## is this correct?
 			#object.setvisible(false) for when inventory uses objects
 			
+	if Input.is_action_just_pressed("use"):
+		inventory.remove()
+			
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 

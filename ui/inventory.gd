@@ -15,6 +15,7 @@ var items : Array :
 var item_registry : ItemRegistry
 var inventory_manager : InventoryManager
 var item_list : Array[Array]
+var selected_item : int = 0
 
 func _ready() -> void:
 	# Initialize the ItemRegistry, which is a small database that contains data about each item in your inventory.
@@ -47,10 +48,22 @@ func add_item_to_registry(id: int, item_name: String, item_description: String, 
 
 ## Add an Item to the player's inventory with the given amount (by default, 1) at the given inventory index (by default, 0).
 ## Returns an ExcessItems object.
-func add_item(item_name: String, amount: int=1, index: int = 0) -> ExcessItems:
+func add_item(item_name: String, amount: int=1, index: int = selected_item) -> ExcessItems:
 	var matching_items : Array = items.filter(func(item): return item.title == item_name)
 	assert(!matching_items.is_empty(), "No matching items for item name " + item_name + "!")
 	var item = items.filter(func(item): return item.title == item_name)[0]
 	item_buttons[index].set_item(item, amount)
 	assert(item)
 	return inventory_manager.add(items.find(item), amount)
+
+#experimental func for testing behavior
+func remove():
+	var item = items.filter(func(item): return item.title == "Bergy")[0]
+	item_buttons[0].set_item(item, 0)
+
+#func remove_item(item_name: String, amount: int=1, index: int = selected_item) -> ExcessItems:
+	#var matching_items : Array = items.filter(func(item): return item.title == item_name)
+	#assert(!matching_items.is_empty(), "No matching items for item name " + item_name + "!")
+	#var item = items.filter(func(item): return item.title == item_name)[0]
+	#item_buttons[index].set_item(item, amount)
+	#return inventory_manager.remove(items.find(item), amount)
