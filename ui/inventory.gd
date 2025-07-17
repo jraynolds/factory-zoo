@@ -61,9 +61,8 @@ func remove():
 	var item = items.filter(func(item): return item.title == "Bergy")[0]
 	item_buttons[0].set_item(item, 0)
 
-#func remove_item(item_name: String, amount: int=1, index: int = selected_item) -> ExcessItems:
-	#var matching_items : Array = items.filter(func(item): return item.title == item_name)
-	#assert(!matching_items.is_empty(), "No matching items for item name " + item_name + "!")
-	#var item = items.filter(func(item): return item.title == item_name)[0]
-	#item_buttons[index].set_item(item, amount)
-	#return inventory_manager.remove(items.find(item), amount)
+func remove_item(amount: int=1, index: int = selected_item):
+	var item_id = inventory_manager.get_slot_item_id(index)
+	var remainder = inventory_manager.remove_items_from_slot(item_id, index, 1)
+	item_buttons[index].set_item(items[index], remainder)
+	
