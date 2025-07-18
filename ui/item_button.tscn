@@ -12,7 +12,5 @@ button = NodePath("Button")
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_vertical = 4
-text = "
-99"
 alignment = 2
 icon_alignment = 1

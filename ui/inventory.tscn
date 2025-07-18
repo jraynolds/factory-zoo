@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bne7m0o8otuca"]
+[gd_scene load_steps=6 format=3 uid="uid://bne7m0o8otuca"]
 
 [ext_resource type="Script" uid="uid://ctf3qwqk4fk4b" path="res://ui/inventory.gd" id="1_kosh3"]
 [ext_resource type="PackedScene" uid="uid://bju1xu2dbpftm" path="res://items/health_potion.tscn" id="2_olbmd"]
 [ext_resource type="PackedScene" uid="uid://bsky802capcnl" path="res://ui/item_button.tscn" id="3_4smma"]
-[ext_resource type="PackedScene" uid="uid://dh8t1akglullk" path="res://entities/bergy.tscn" id="3_wurve"]
+[ext_resource type="PackedScene" uid="uid://bir6tqadxypdl" path="res://items/item.tscn" id="4_n584p"]
+[ext_resource type="Texture2D" uid="uid://cdbe3r0ntuptb" path="res://assets/art/playerGrey_walk2.png" id="5_ymwe8"]
 
 [node name="Inventory" type="HBoxContainer" node_paths=PackedStringArray("items_container", "item_buttons")]
 script = ExtResource("1_kosh3")
@@ -15,8 +16,11 @@ item_buttons = [NodePath("ItemButton"), NodePath("ItemButton2"), NodePath("ItemB
 [node name="Health Potion" parent="Items container" instance=ExtResource("2_olbmd")]
 visible = false
 
-[node name="Bergy" parent="Items container" instance=ExtResource("3_wurve")]
+[node name="Bergy" parent="Items container" instance=ExtResource("4_n584p")]
 visible = false
+title = "Bergy"
+icon = ExtResource("5_ymwe8")
+description = "A good-tasting berry."
 
 [node name="ItemButton" parent="." instance=ExtResource("3_4smma")]
 layout_mode = 2
