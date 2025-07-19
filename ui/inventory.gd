@@ -38,7 +38,6 @@ var selected_item : InventoryItem : ## The item (if any) in the selected button.
 	get :
 		return item_list[item_buttons.find(selected_button)]
 
-
 func _ready() -> void:
 	# Initialize the ItemRegistry, which is a small database that contains data about each item in your inventory.
 	#item_registry = ItemRegistry.new()
@@ -137,3 +136,10 @@ func get_first_open_slot(item: Entity = null, allow_stacking: bool = true) -> in
 			return i
 	assert(false, "The inventory is full!")
 	return -1
+
+func use_selected_item(location):
+	var item
+	if !item_list[selected_item].is_empty():
+		item = item_list[selected_item][0]
+		remove_item()
+		item.use(location)

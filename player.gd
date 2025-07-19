@@ -31,10 +31,11 @@ func _process(delta: float) -> void:
 		for object in interactable_objects :
 			inventory.add_item(object)
 			#object.queue_free() ## is this correct?
-			#object.setvisible(false) for when inventory uses objects
+
 			
 	if Input.is_action_just_pressed("use"):
-		inventory.remove_item()
+		inventory.use_selected_item(get_global_mouse_position())
+		
 		
 			
 func _physics_process(delta: float) -> void:
