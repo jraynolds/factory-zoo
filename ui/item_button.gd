@@ -7,8 +7,8 @@ class_name ItemButton
 #func _process(delta: float) -> void:
 	#button.text = ""
 
-## Sets the item this slot holds.
-func set_item(item: Entity, amount: int):
+## Sets the item this slot holds. By default, no item with no amount.
+func set_item(item: Entity=null, amount: int=0):
 	if !item:
 		button.icon = null
 		button.text = ""

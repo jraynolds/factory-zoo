@@ -1,22 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bne7m0o8otuca"]
+[gd_scene load_steps=4 format=3 uid="uid://bne7m0o8otuca"]
 
 [ext_resource type="Script" uid="uid://ctf3qwqk4fk4b" path="res://ui/inventory.gd" id="1_kosh3"]
-[ext_resource type="PackedScene" uid="uid://bju1xu2dbpftm" path="res://items/health_potion.tscn" id="2_olbmd"]
+[ext_resource type="ButtonGroup" uid="uid://btm4eh1vcol5q" path="res://ui/item_button_group.tres" id="2_olbmd"]
 [ext_resource type="PackedScene" uid="uid://bsky802capcnl" path="res://ui/item_button.tscn" id="3_4smma"]
-[ext_resource type="PackedScene" uid="uid://dh8t1akglullk" path="res://entities/bergy.tscn" id="3_wurve"]
 
 [node name="Inventory" type="HBoxContainer" node_paths=PackedStringArray("items_container", "item_buttons")]
 script = ExtResource("1_kosh3")
 items_container = NodePath("Items container")
 item_buttons = [NodePath("ItemButton"), NodePath("ItemButton2"), NodePath("ItemButton3"), NodePath("ItemButton4"), NodePath("ItemButton5"), NodePath("ItemButton6"), NodePath("ItemButton7"), NodePath("ItemButton8"), NodePath("ItemButton9"), NodePath("ItemButton10")]
-
-[node name="Items container" type="Node2D" parent="."]
-
-[node name="Health Potion" parent="Items container" instance=ExtResource("2_olbmd")]
-visible = false
-
-[node name="Bergy" parent="Items container" instance=ExtResource("3_wurve")]
-visible = false
+item_button_group = ExtResource("2_olbmd")
 
 [node name="ItemButton" parent="." instance=ExtResource("3_4smma")]
 layout_mode = 2
@@ -47,3 +39,5 @@ layout_mode = 2
 
 [node name="ItemButton10" parent="." instance=ExtResource("3_4smma")]
 layout_mode = 2
+
+[node name="Items container" type="Node2D" parent="."]

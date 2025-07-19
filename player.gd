@@ -30,8 +30,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pickup"):
 		for object in interactable_objects :
 			inventory.add_item(object)
-			object.queue_free() ## is this correct?
-			#object.setvisible(false) for when inventory uses objects
+			#object.queue_free() ## is this correct?
+
 			
 	if Input.is_action_just_pressed("use"):
 		inventory.use_selected_item(get_global_mouse_position())

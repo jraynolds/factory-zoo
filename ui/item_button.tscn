@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsky802capcnl"]
+[gd_scene load_steps=3 format=3 uid="uid://bsky802capcnl"]
 
 [ext_resource type="Script" uid="uid://2p22cik08l1s" path="res://ui/item_button.gd" id="1_sm061"]
+[ext_resource type="ButtonGroup" uid="uid://btm4eh1vcol5q" path="res://ui/item_button_group.tres" id="2_3uonw"]
 
 [node name="ItemButton" type="PanelContainer" node_paths=PackedStringArray("button")]
 size_flags_horizontal = 4
@@ -12,5 +13,8 @@ button = NodePath("Button")
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_vertical = 4
+toggle_mode = true
+button_group = ExtResource("2_3uonw")
 alignment = 2
 icon_alignment = 1
+expand_icon = true
