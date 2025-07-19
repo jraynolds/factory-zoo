@@ -11,3 +11,6 @@ class_name Entity
 @export_multiline var description : String ## A longer description for this Entity.
 var icon : Texture2D : ## The texture we display for this Entity.
 	get: return sprite.texture
+
+func use(location):
+	Map.add_entity(self, location)

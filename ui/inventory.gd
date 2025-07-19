@@ -15,7 +15,7 @@ var items : Array :
 #var item_registry : ItemRegistry
 var item_registry : Dictionary ## It's our own implementation. What is the value? That's a secret.
 #var inventory_manager : InventoryManager
-var item_list : Array[Array] ## The items the player holds. The format is Array[Array[Item item, int amount]]
+var item_list : Array[Array] ## The items the player holds. The format is Array[Array[Entity item, int amount]]
 var selected_item : int = 0
 
 func _ready() -> void:
@@ -40,7 +40,7 @@ func _ready() -> void:
 	
 	# Add health potions
 	#add_item_by_name("Health Potion", 99 + 50)
-	add_item($"Items container/Bergy" as Item, 10)
+	add_item($"Items container/Bergy" as Entity, 10)
 	# By default the stack capacity is 99 items. The line above added two stacks on the first two item slots: one of 99 potions and another of 50 potions.
 
 
@@ -55,7 +55,7 @@ func add_item_to_registry(item: Item):
 
 
 ## Add an Item to the player's inventory with the given amount (by default, 1) at the given inventory index (by default, 0).
-func add_item(item: Item, amount: int=1, index: int = selected_item):
+func add_item(item: Entity, amount: int=1, index: int = selected_item):
 	var matching_items : Array = items.filter(func(i): return typeof(i) == typeof(item)) ## Share the same type
 	assert(!matching_items.is_empty(), "No matching items for item type " + str(item) + "!")
 	var matching_item = matching_items[0]
@@ -84,9 +84,9 @@ func remove():
 	var item = items.filter(func(item): return item.title == "Bergy")[0]
 	item_buttons[0].set_item(item, 0)
 
-func remove_item(amount: int=1, index: int = selected_item):
+func remove_item(amount: int=1, index: int = selected_item) -> bool:
 	if len(item_list) < index+1:
-		return
+		return false
 	#var item_id = inventory_manager.get_slot_item_id(index)
 	#var remainder = inventory_manager.remove_items_from_slot(item_id, index, 1)
 	item_list[index][1] -= amount ## Reduce the item stack at that index.
@@ -94,4 +94,9 @@ func remove_item(amount: int=1, index: int = selected_item):
 	if item_list[index][1] <= 0:
 		item_buttons[index].set_item(null, 0)
 		item_list[index] = []
-	
+	return true
+
+func use_selected_item(location):
+	var item = item_list[selected_item][0]
+	if remove_item():
+		item.use(location)
