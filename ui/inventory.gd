@@ -84,9 +84,9 @@ func remove():
 	var item = items.filter(func(item): return item.title == "Bergy")[0]
 	item_buttons[0].set_item(item, 0)
 
-func remove_item(amount: int=1, index: int = selected_item) -> bool:
+func remove_item(amount: int=1, index: int = selected_item):
 	if len(item_list) < index+1:
-		return false
+		return
 	#var item_id = inventory_manager.get_slot_item_id(index)
 	#var remainder = inventory_manager.remove_items_from_slot(item_id, index, 1)
 	item_list[index][1] -= amount ## Reduce the item stack at that index.
@@ -94,9 +94,10 @@ func remove_item(amount: int=1, index: int = selected_item) -> bool:
 	if item_list[index][1] <= 0:
 		item_buttons[index].set_item(null, 0)
 		item_list[index] = []
-	return true
 
 func use_selected_item(location):
-	var item = item_list[selected_item][0]
-	if remove_item():
+	var item
+	if !item_list[selected_item].is_empty():
+		item = item_list[selected_item][0]
+		remove_item()
 		item.use(location)
