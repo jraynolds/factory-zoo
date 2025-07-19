@@ -29,8 +29,8 @@ func _process(delta: float) -> void:
 	## only works with one item right now
 	if Input.is_action_just_pressed("pickup"):
 		for object in interactable_objects :
-			inventory.add_item(object.title)
-			object.queue_free() ## is this correct?
+			inventory.add_item(object)
+			#object.queue_free() ## is this correct?
 			#object.setvisible(false) for when inventory uses objects
 			
 	if Input.is_action_just_pressed("use"):
