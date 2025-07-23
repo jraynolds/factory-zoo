@@ -137,9 +137,8 @@ func get_first_open_slot(item: Entity = null, allow_stacking: bool = true) -> in
 	assert(false, "The inventory is full!")
 	return -1
 
-func use_selected_item(location):
-	var item
-	if !item_list[selected_item].is_empty():
-		item = item_list[selected_item][0]
-		remove_item()
-		item.use(location)
+
+## Uses the player's selected item at the given screen location.
+func use_selected_item(location: Vector2):
+	selected_item.item.use(location)
+	remove_item()

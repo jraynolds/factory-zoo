@@ -21,6 +21,8 @@ var animals : Array[Animal] : ## Getter for all animals in the container.
 
 ## Adds the given Entity as a child of the entity container, at the given location.
 func add_entity(entity, location: Vector2):
+	if entity.get_parent():
+		entity.get_parent().remove_child(entity)
 	entity_container.add_child(entity)
 	entity.position = location
 	entity.visible = true
