@@ -84,7 +84,11 @@ func add_item(item: Entity, amount: int=1, index: int = get_first_open_slot(item
 	#var matching_items : Array = items.filter(func(i): return typeof(i) == typeof(item)) ## Share the same type
 	#assert(!matching_items.is_empty(), "No matching items for item type " + str(item) + "!")
 	#var matching_item = matching_items[0]
-	item_list[index] = InventoryItem.new(item, amount)
+	if item_list[index] != null:
+		if item_list[index].item.title == item.title:
+			item_list[index].amount += amount
+	else :
+		item_list[index] = InventoryItem.new(item, amount)
 	item_buttons[index].set_item(item, amount)
 	item.get_parent().remove_child(item)
 	items_container.add_child(item)

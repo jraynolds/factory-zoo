@@ -25,8 +25,7 @@ func _process(delta: float) -> void:
 		spawn_interval_left = spawn_interval
 		spawn()
 
-func spawnOther(spawned_entity : Entity):
-	var spawn_location = Map.get_random_empty_neighbor_location(get_parent().position)
+func spawnOther(spawned_entity : Entity, spawn_location = Map.get_random_empty_neighbor_location(get_parent().position)):
 	spawned_entity.visible = false
 	assert(spawn_location != null, "We couldn't find a valid neighboring location!")
 	Map.add_entity(spawned_entity, spawn_location)
