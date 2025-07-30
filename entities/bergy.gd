@@ -10,5 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-#func use(location):
-	#Map.add_entity(load("res://entities/animals/bergy_bush.gd").new(), location)
+## Spawns a BergyBush instead.
+func use(location):
+	Map.add_entity(load("res://entities/animals/bergy_bush.tscn").instantiate(), location)

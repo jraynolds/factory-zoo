@@ -9,6 +9,8 @@
 size = Vector2(14, 14)
 
 [node name="Water" type="RigidBody2D" node_paths=PackedStringArray("sprite", "collision_shape", "spawning_component", "interaction_component")]
+collision_layer = 5
+collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_v5bw3")
 sprite = NodePath("Sprite2D")

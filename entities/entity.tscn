@@ -9,14 +9,13 @@
 size = Vector2(14, 14)
 
 [node name="Entity" type="RigidBody2D" node_paths=PackedStringArray("sprite", "collision_shape", "spawning_component", "interaction_component")]
+collision_mask = 2
 gravity_scale = 0.0
 script = ExtResource("1_jm4vq")
 sprite = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")
 spawning_component = NodePath("Spawning")
 interaction_component = NodePath("Interaction")
-title = null
-description = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)

@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://bqxse81lsslos" path="res://entities/bergy.gd" id="2_6jl1l"]
 
 [node name="Bergy" instance=ExtResource("1_aumqv")]
-collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_6jl1l")
 title = "Bergy"

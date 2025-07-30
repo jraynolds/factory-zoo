@@ -4,5 +4,4 @@
 
 [node name="Nouse" instance=ExtResource("1_fcgo0")]
 modulate = Color(0.388235, 1, 0, 1)
-title = ""
-description = ""
+collision_mask = 0

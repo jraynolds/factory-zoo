@@ -1063,8 +1063,6 @@ position = Vector2(-39, 89)
 
 [node name="BergyBush" parent="Entities" instance=ExtResource("6_05x41")]
 position = Vector2(24, 56)
-title = ""
-description = ""
 
 [node name="Bergy" parent="Entities" instance=ExtResource("8_oysan")]
 position = Vector2(41, -56)

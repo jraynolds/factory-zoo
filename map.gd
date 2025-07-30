@@ -39,12 +39,13 @@ func round(location: Vector2) -> Vector2:
 	return location	
 
 ## Adds the given Entity as a child of the entity container, at the given location.
-func add_entity(entity, location: Vector2):
+func add_entity(entity: Entity, location: Vector2):
 	#location = round(location) Tell me why this doesnt work or i kick a baby in the face
 	location = Map.round(location)
 	if entity.get_parent():
-		entity.get_parent().remove_child(entity)
-	entity_container.add_child(entity)
+		entity.reparent(entity_container)
+	else :
+		entity_container.add_child(entity)
 	entity.position = location
 	entity.visible = true
 	#animals.append(animal)
