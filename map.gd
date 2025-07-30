@@ -19,8 +19,29 @@ var animals : Array[Animal] : ## Getter for all animals in the container.
 				out.append(animal)
 		return out
 
+
+## rounds a given location to nearest centered grid location
+func round(location: Vector2) -> Vector2:
+	var x = location.x - 8
+	var y = location.y - 8
+	var xmod = fmod(x, 16) #16 should be grid size
+	var ymod = fmod(y, 16)
+	x -= xmod
+	if xmod > 8 :
+		x += 16
+	y -= ymod
+	if ymod > 8 :
+		y += 16
+	x += 8
+	y += 8	
+	location.x = x
+	location.y = y
+	return location	
+
 ## Adds the given Entity as a child of the entity container, at the given location.
 func add_entity(entity, location: Vector2):
+	#location = round(location) Tell me why this doesnt work or i kick a baby in the face
+	location = Map.round(location)
 	if entity.get_parent():
 		entity.get_parent().remove_child(entity)
 	entity_container.add_child(entity)

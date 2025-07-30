@@ -10,5 +10,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func use(location):
-	Map.add_entity(load("res://entities/animals/bergy_bush.gd").new(), location)
+#func use(location):
+	#Map.add_entity(load("res://entities/animals/bergy_bush.gd").new(), location)
